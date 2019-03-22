@@ -1,41 +1,41 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
+            <v-flex offset-sm3 sm6 xs12>
                 <h1 class="text--secondary mb-3">Create new ad</h1>
-                <v-form ref="form" v-model="valid" validation class="mb-3">
+                <v-form class="mb-3" ref="form" v-model="valid" validation>
                     <v-text-field
+                            :rules="[v => !!v || 'Ad title is required']"
                             label="Ad title"
                             name="title"
+                            required
                             type="text"
                             v-model="title"
-                            required
-                            :rules="[v => !!v || 'Ad title is required']"
                     >
                     </v-text-field>
                     <v-text-field
+                            :rules="[v => !!v || 'Ad title is description']"
                             label="Ad description"
+                            multi-line
                             name="description"
+                            required
                             type="text"
                             v-model="description"
-                            multi-line
-                            required
-                            :rules="[v => !!v || 'Ad title is description']"
                     >
                     </v-text-field>
                 </v-form>
-                <v-layout row class="mb-3">
+                <v-layout class="mb-3" row>
                     <v-flex xs12>
                         <v-btn class="warning">
                             Upload
-                            <v-icon right dark>cloud_upload</v-icon>
+                            <v-icon dark right>cloud_upload</v-icon>
                         </v-btn>
 
                     </v-flex>
                 </v-layout>
                 <v-layout row>
                     <v-flex xs12>
-                        <img src="https://v1.vuetifyjs.com/static/doc-images/carousel/squirrel.jpg" height="100">
+                        <img height="100" src="https://v1.vuetifyjs.com/static/doc-images/carousel/squirrel.jpg">
                     </v-flex>
                 </v-layout>
 
@@ -52,9 +52,9 @@
                     <v-flex xs12>
                         <v-spacer></v-spacer>
                         <v-btn
-                                class="success"
-                                @click="createAd"
                                 :disabled="!valid"
+                                @click="createAd"
+                                class="success"
                         >
                             Create ad
                         </v-btn>
