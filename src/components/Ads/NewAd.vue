@@ -53,7 +53,7 @@
                         <v-spacer></v-spacer>
                         <v-btn
                                 :disabled="!valid"
-                                @click="createAd"
+                                @click="createAd()"
                                 class="success"
                         >
                             Create ad
@@ -82,9 +82,10 @@
             const ad = {
               title: this.title,
               description: this.description,
-              promo: this.promo
+              promo: this.promo,
+              imageSrc: 'https://cdn-images-1.medium.com/max/1600/1*nq9cdMxtdhQ0ZGL8OuSCUQ.jpeg'
             }
-            console.log(ad)
+            this.$store.dispatch('createAd', ad)
           }
         }
       }
