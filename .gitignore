@@ -12,3 +12,6 @@ yarn-error.log*
 *.ntvs*
 *.njsproj
 *.sln
+
+# Конфиг с токеном авторизации Firebase
+/src/fb_cfg.js
