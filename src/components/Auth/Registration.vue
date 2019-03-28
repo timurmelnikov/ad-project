@@ -87,7 +87,6 @@
       methods: {
         onSubmit () {
           if (this.$refs.form.validate()) {
-                    // alert('werwer')
             const user = {
               email: this.email,
               password: this.password,
@@ -98,10 +97,7 @@
                 .then(() => {
                   this.$router.push('/')
                 })
-                .catch(err => {
-                  console.log(err)
-                })
-            // console.log(user)
+                .catch(() => {})
           }
         }
       }
