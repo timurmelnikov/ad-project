@@ -84,6 +84,11 @@
                 .catch(() => {})
           }
         }
+      },
+      created () {
+        if (this.$route.query['loginError']) {
+          this.$store.dispatch('setError', 'Pleace login to access to this page')
+        }
       }
     }
 </script>
