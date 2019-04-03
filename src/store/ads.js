@@ -57,11 +57,14 @@ export default {
         const newAd = new Ad(
             payload.title,
             payload.description,
-            getters.user.id,
+            // 'PR6QwBPxKTT1RG6ScwcVpWtIQww2',
+            'sdfsdfsd',
+            // getters.user.id,
             payload.imageSrc,
             payload.promo
         )
-        console.log(getters.user.id)
+        console.log('4444')
+        console.log(getters.user)
 
         const fbValue = await fb.database().ref('ads').push(newAd)
         console.log(fbValue)
